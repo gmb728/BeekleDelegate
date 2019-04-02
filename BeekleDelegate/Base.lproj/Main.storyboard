@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,51 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeekleDelegate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="4gf-wh-lxe">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="356"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="waO-ef-MnZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="896" height="356"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="waO-ef-MnZ" firstAttribute="centerY" secondItem="4gf-wh-lxe" secondAttribute="centerY" id="7Ck-B0-ACH"/>
+                                    <constraint firstAttribute="trailing" secondItem="waO-ef-MnZ" secondAttribute="trailing" id="EsM-YH-FhC"/>
+                                    <constraint firstItem="waO-ef-MnZ" firstAttribute="leading" secondItem="4gf-wh-lxe" secondAttribute="leading" id="Jv6-Jw-hLF"/>
+                                    <constraint firstAttribute="bottom" secondItem="waO-ef-MnZ" secondAttribute="bottom" id="OGw-px-w70"/>
+                                    <constraint firstItem="waO-ef-MnZ" firstAttribute="top" secondItem="4gf-wh-lxe" secondAttribute="top" id="Ok5-A0-cFW"/>
+                                    <constraint firstItem="waO-ef-MnZ" firstAttribute="centerX" secondItem="4gf-wh-lxe" secondAttribute="centerX" id="gVT-UE-HMD"/>
+                                </constraints>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fwq-U4-YHe">
+                                <rect key="frame" x="0.0" y="356" width="896" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="fwq-U4-YHe" secondAttribute="bottom" id="0A5-qs-tMd"/>
+                            <constraint firstItem="4gf-wh-lxe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AVu-Kg-XcR"/>
+                            <constraint firstItem="fwq-U4-YHe" firstAttribute="top" secondItem="4gf-wh-lxe" secondAttribute="bottom" id="XAd-dq-7BT"/>
+                            <constraint firstItem="4gf-wh-lxe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hjt-GE-tUm"/>
+                            <constraint firstItem="fwq-U4-YHe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jg3-pS-qqF"/>
+                            <constraint firstItem="4gf-wh-lxe" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="jty-Sc-q5x"/>
+                            <constraint firstAttribute="trailing" secondItem="fwq-U4-YHe" secondAttribute="trailing" id="rPa-sn-nbi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="fwq-U4-YHe" id="XkF-8x-w5Y"/>
+                        <outlet property="scrollView" destination="4gf-wh-lxe" id="gZu-Ko-vez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="22.767857142857142" y="-142.02898550724638"/>
         </scene>
     </scenes>
 </document>
